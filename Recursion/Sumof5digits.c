@@ -8,5 +8,19 @@ int main()
     int n,sum;
     printf("Enter a 5 digit number: ");
     scanf("%d",&n);
-    sum=digsum()
+    sum=digsum(n);
+    printf("\n The sum of the 5 digit number is: %d",sum);
+    return 0;
+}
+int digsum(int n)
+{
+    int s,rem;
+    if(n!=0)
+    {
+        rem=n%10;
+        s=rem + digsum(n/10);
+    }
+    else
+        return 0;
+    return s;
 }
